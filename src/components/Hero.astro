@@ -1,0 +1,65 @@
+<template>
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Transform Your Digital Future</h1>
+      <p>Elevate your projects with cutting-edge design systems that ensure efficiency and consistency.</p>
+      <div class="cta-buttons">
+        <button class="cta-button">Get Started</button>
+        <button class="cta-button">Learn More</button>
+      </div>
+    </div>
+  </section>
+</template>
+
+<style>
+.hero {
+  background: linear-gradient(90deg, rgba(255, 105, 180, 1) 0%, rgba(0, 204, 255, 1) 100%);
+  padding: 50px;
+  text-align: center;
+}
+
+.hero-content {
+  max-width: 600px;
+  margin: auto;
+}
+
+h1 {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+}
+
+p {
+  font-size: 1.2em;
+  margin-bottom: 30px;
+}
+
+.cta-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.cta-button {
+  padding: 15px 30px;
+  font-size: 1em;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.cta-button:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2em;
+  }
+  p {
+    font-size: 1em;
+  }
+}
+
+</style>

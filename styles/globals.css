@@ -1,0 +1,25 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+* {
+  @apply border-neutral-800;
+}
+
+html,
+body {
+  @apply bg-background text-ink antialiased;
+}
+
+body {
+  @apply bg-ether;
+}
+
+::selection {
+  background: rgba(92, 136, 255, 0.35);
+  color: #ffffff;
+}

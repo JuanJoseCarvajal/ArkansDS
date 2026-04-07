@@ -12,14 +12,15 @@
 
 html,
 body {
-  @apply bg-background text-ink antialiased;
+  @apply bg-background text-white antialiased;
 }
 
 body {
-  @apply bg-ether;
+  background-image:
+    radial-gradient(circle at 10% 10%, rgba(79, 130, 255, 0.12), transparent 38%),
+    radial-gradient(circle at 90% 20%, rgba(139, 111, 61, 0.1), transparent 35%);
 }
 
-::selection {
-  background: rgba(92, 136, 255, 0.35);
-  color: #ffffff;
+a {
+  @apply transition-colors;
 }

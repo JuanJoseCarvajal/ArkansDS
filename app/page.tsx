@@ -4,6 +4,8 @@ import Revelation from '@/components/sections/Revelation';
 import Process from '@/components/sections/Process';
 import HermeticSystem from '@/components/sections/HermeticSystem';
 import ServicesSection from '@/components/sections/Services';
+import ServicesSection from '@/components/sections/Services';
+import Process from '@/components/sections/Process';
 import CaseStudies from '@/components/sections/CaseStudies';
 import CTA from '@/components/sections/CTA';
 
@@ -16,6 +18,8 @@ export default function HomePage() {
       <HermeticSystem />
       <Process />
       <ServicesSection />
+      <ServicesSection />
+      <Process />
       <CaseStudies />
       <CTA />
     </>

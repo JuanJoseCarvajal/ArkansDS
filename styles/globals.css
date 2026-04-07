@@ -8,18 +8,45 @@
 
 * {
   box-sizing: border-box;
+  border-color: rgb(38 38 38);
+  @apply border-neutral-800;
 }
 
 html,
 body {
   margin: 0;
   padding: 0;
-  background: #060607;
+  min-height: 100%;
+  background-color: #060607;
   color: #f5f7ff;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 body {
-  min-height: 100vh;
+  background-image:
+    radial-gradient(circle at 20% 0%, rgba(92, 136, 255, 0.15), transparent 36%),
+    radial-gradient(circle at 80% 30%, rgba(170, 138, 87, 0.14), transparent 42%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0));
+  @apply bg-background text-ink antialiased;
+}
+
+body {
+  @apply bg-ether;
+}
+
+::selection {
+  background: rgba(92, 136, 255, 0.35);
+  color: #ffffff;
+  @apply bg-background text-white antialiased;
+}
+
+body {
+  background-image:
+    radial-gradient(circle at 10% 10%, rgba(79, 130, 255, 0.12), transparent 38%),
+    radial-gradient(circle at 90% 20%, rgba(139, 111, 61, 0.1), transparent 35%);
+}
+
+a {
+  @apply transition-colors;
 }

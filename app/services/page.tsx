@@ -16,6 +16,13 @@ export default function ServicesPage() {
       <Revelation />
       <Process />
       <ServicesSection />
+      <Section className="pb-6">
+        <Container>
+          <h1 className="text-4xl font-semibold sm:text-6xl">Services designed for strategic conversion.</h1>
+        </Container>
+      </Section>
+      <ServicesSection />
+      <Process />
       <CTA />
     </>
   );

@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import type { ReactNode } from 'react';
+import { ReactNode } from 'react';
 import { fadeUp } from '@/lib/motion';
 
 type SectionProps = {
@@ -12,7 +12,7 @@ type SectionProps = {
   tone?: 'calm' | 'tense' | 'luminous';
 };
 
-const toneMap: Record<NonNullable<SectionProps['tone']>, string> = {
+const toneMap = {
   calm: 'bg-transparent',
   tense: 'bg-white/[0.015]',
   luminous: 'bg-gradient-to-b from-electric/10 to-transparent'
@@ -23,6 +23,13 @@ export default function Section({ children, className = '', id, stage, tone = 'c
     <motion.section
       id={id}
       className={`relative py-20 sm:py-28 ${toneMap[tone]} ${className}`}
+};
+
+export default function Section({ children, className = '', id }: SectionProps) {
+  return (
+    <motion.section
+      id={id}
+      className={`py-20 sm:py-28 ${className}`}
       variants={fadeUp}
       initial="hidden"
       whileInView="visible"

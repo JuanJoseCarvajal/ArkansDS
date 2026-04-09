@@ -1,29 +1,13 @@
 ---
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
-import '../styles/global.css';
 
-interface Props {
-  title: string;
-  description?: string;
-}
+layout: BaseLayout.astro
 
-const { title, description = 'Cosmética natural orgánica inspirada en la alquimia botánica.' } = Astro.props;
 ---
 
-<!doctype html>
-<html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="description" content={description} />
-    <title>{title}</title>
-  </head>
-  <body>
-    <Header />
-    <main class="container">
-      <slot />
-    </main>
-    <Footer />
-  </body>
-</html>
+<Header />
+
+<main>
+  <slot />
+</main>
+
+<Footer />

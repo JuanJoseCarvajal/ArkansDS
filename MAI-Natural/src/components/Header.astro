@@ -1,0 +1,21 @@
+---
+import { brand, navigation } from '../data/content';
+const pathname = Astro.url.pathname;
+---
+
+<header class="site-header">
+  <div class="container inner">
+    <a href="/" class="logo">{brand.name}</a>
+    <nav>
+      <ul>
+        {
+          navigation.map((item) => (
+            <li>
+              <a class={pathname === item.href ? 'active' : ''} href={item.href}>{item.label}</a>
+            </li>
+          ))
+        }
+      </ul>
+    </nav>
+  </div>
+</header>

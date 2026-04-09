@@ -1,0 +1,49 @@
+:root {
+  --bg: #f8f5ef;
+  --surface: #fff;
+  --text: #1d2b1f;
+  --muted: #4b5f4f;
+  --accent: #486b4a;
+  --accent-soft: #d6e2d1;
+}
+
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: Inter, system-ui, sans-serif;
+  color: var(--text);
+  background: var(--bg);
+  line-height: 1.5;
+}
+
+.container { width: min(1100px, 92%); margin: 0 auto; }
+.site-header { position: sticky; top: 0; background: rgba(248,245,239,.95); backdrop-filter: blur(6px); border-bottom: 1px solid #e2dfd8; }
+.site-header .inner { display: flex; justify-content: space-between; align-items: center; padding: .8rem 0; gap: 1rem; }
+.logo { font-weight: 700; color: var(--text); text-decoration: none; }
+nav ul { display: flex; gap: 1rem; list-style: none; margin: 0; padding: 0; flex-wrap: wrap; }
+nav a { text-decoration: none; color: var(--muted); font-size: .95rem; }
+nav a.active, nav a:hover { color: var(--accent); }
+
+main.container { padding: 2rem 0 4rem; }
+.hero, .page-hero { padding: 3.5rem 0 2rem; }
+.eyebrow { text-transform: uppercase; letter-spacing: .1em; color: var(--accent); font-size: .8rem; }
+h1 { font-size: clamp(2rem, 5vw, 3.4rem); line-height: 1.1; margin: .5rem 0 1rem; }
+h2 { font-size: clamp(1.5rem, 2vw, 2rem); margin-top: 2.8rem; }
+.actions { display: flex; gap: .8rem; flex-wrap: wrap; margin-top: 1.2rem; }
+
+.btn { display: inline-block; background: var(--accent); color: white; text-decoration: none; padding: .72rem 1rem; border-radius: .6rem; font-weight: 600; }
+.btn.secondary { background: var(--accent-soft); color: var(--text); }
+
+.cards { display: grid; grid-template-columns: repeat(auto-fit,minmax(220px,1fr)); gap: 1rem; margin-top: 1rem; }
+.card { background: var(--surface); border: 1px solid #e2dfd8; border-radius: .8rem; padding: 1rem; }
+.card h3 { margin-top: 0; }
+.tag { color: var(--accent); font-weight: 600; font-size: .85rem; margin-bottom: .2rem; }
+.cta { background: #ecf2e8; border-radius: 1rem; padding: 1.5rem; margin-top: 2rem; }
+
+.site-footer { border-top: 1px solid #e2dfd8; background: #f1ede4; padding: 2rem 0; }
+.footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; }
+.footer-grid h3, .footer-grid h4 { margin-top: 0; }
+
+@media (max-width: 800px) {
+  .site-header .inner { flex-direction: column; align-items: flex-start; }
+}

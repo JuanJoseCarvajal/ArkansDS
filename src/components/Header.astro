@@ -1,22 +1,21 @@
 ---
-layout: '../layouts/BaseLayout.astro'
+import { brand, navigation } from '../data/content';
+const pathname = Astro.url.pathname;
 ---
 
-<header>
-  <div class="logo">
-    <!-- Add your logo here -->
-    <img src="/path/to/logo.png" alt="Logo" />
-  </div>
-  <nav>
-    <ul>
-      <li><a href="/services">Services</a></li>
-      <li><a href="/about">About</a></li>
-      <li><a href="/portfolio">Portfolio</a></li>
-      <li><a href="/contact">Contact</a></li>
-    </ul>
-  </nav>
-  <div class="cta-buttons">
-    <a href="/get-started" class="btn">Get Started</a>
-    <a href="/schedule-consultation" class="btn">Schedule Consultation</a>
+<header class="site-header">
+  <div class="container inner">
+    <a href="/" class="logo">{brand.name}</a>
+    <nav>
+      <ul>
+        {
+          navigation.map((item) => (
+            <li>
+              <a class={pathname === item.href ? 'active' : ''} href={item.href}>{item.label}</a>
+            </li>
+          ))
+        }
+      </ul>
+    </nav>
   </div>
 </header>

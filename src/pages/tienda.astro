@@ -1,0 +1,21 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { bestSellers } from '../data/content';
+---
+
+<BaseLayout title="Tienda | MAI Natural">
+  <section class="page-hero">
+    <h1>Tienda MAI Natural</h1>
+    <p>Explora nuestra selección destacada de cosmética natural capilar, facial y corporal.</p>
+  </section>
+  <section class="cards">
+    {bestSellers.map((item) => (
+      <article class="card product">
+        <p class="tag">{item.category}</p>
+        <h3>{item.name}</h3>
+        <p>{item.benefit}</p>
+        <strong>{item.price}</strong>
+      </article>
+    ))}
+  </section>
+</BaseLayout>

@@ -23,16 +23,10 @@ export default function Section({ children, className = '', id, stage, tone = 'c
     <motion.section
       id={id}
       className={`relative py-20 sm:py-28 ${toneMap[tone]} ${className}`}
-};
-
-export default function Section({ children, className = '', id }: SectionProps) {
-  return (
-    <motion.section
-      id={id}
-      className={`py-20 sm:py-28 ${className}`}
       variants={fadeUp}
       initial="hidden"
       whileInView="visible"
+      transition={{ duration: 0.6, ease: [0.25, 0.46, 0.45, 0.94] }}
       viewport={{ once: true, amount: 0.2 }}
     >
       {stage ? (

@@ -30,13 +30,6 @@ const config: Config = {
       },
       transitionTimingFunction: {
         ceremonial: 'cubic-bezier(0.22, 1, 0.36, 1)'
-        background: '#070707',
-        surface: '#0f0f10',
-        accent: '#8b6f3d',
-        electric: '#4f82ff'
-      },
-      boxShadow: {
-        glow: '0 0 48px rgba(79, 130, 255, 0.18)'
       }
     }
   },

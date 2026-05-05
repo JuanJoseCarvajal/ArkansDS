@@ -5,11 +5,6 @@ export default function CaseStudies() {
   return (
     <Section tone="calm">
       <Container>
-        <div className="grid gap-8 rounded-3xl border border-white/10 bg-surface/65 p-8 shadow-card lg:grid-cols-2 lg:p-12">
-          <div>
-            <p className="text-xs uppercase tracking-ritual text-accent">Selected Outcomes</p>
-    <Section>
-      <Container>
         <div className="grid gap-8 rounded-3xl border border-white/10 bg-surface p-8 lg:grid-cols-2 lg:p-12">
           <div>
             <p className="text-xs uppercase tracking-[0.3em] text-accent">Selected Outcomes</p>

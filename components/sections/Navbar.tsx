@@ -7,6 +7,7 @@ const links = [
   { href: '/casos-estudio', label: 'Casos' },
   { href: '/sobre-nosotros', label: 'Nosotros' },
   { href: '/blog', label: 'Insights' },
+  { href: '/system-architecture', label: 'System' },
   { href: '/contacto', label: 'Contacto' }
 ];
 

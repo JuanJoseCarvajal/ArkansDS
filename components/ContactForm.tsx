@@ -21,7 +21,7 @@ export default function ContactForm() {
     const email = String(formData.get('email') ?? '').trim();
     const message = String(formData.get('message') ?? '').trim();
 
-    if (!name) nextErrors.name = 'Cuéntanos tu nombre.';
+    if (!name) nextErrors.name = 'Cuentanos tu nombre.';
     if (!/^\S+@\S+\.\S+$/.test(email)) nextErrors.email = 'Usa un email válido.';
     if (message.length < 20) nextErrors.message = 'Danos al menos 20 caracteres de contexto.';
 
@@ -48,15 +48,15 @@ export default function ContactForm() {
       </div>
       <div>
         <label htmlFor="message" className="mb-2 block text-sm text-white/85">
-          ¿Qué necesitas mejorar?
+          Que sintoma o resultado quieres trabajar
         </label>
         <textarea id="message" name="message" rows={5} className="w-full rounded-lg border border-white/20 bg-transparent p-3 outline-none ring-electric/40 focus:ring" />
         {errors.message ? <p className="mt-1 text-sm text-red-300">{errors.message}</p> : null}
       </div>
-      <Button type="submit" ariaLabel="Enviar solicitud de diagnóstico">
-        Enviar solicitud
+      <Button type="submit" ariaLabel="Enviar solicitud de lectura iniciatica">
+        Enviar lectura
       </Button>
-      {submitted ? <p className="text-sm text-emerald-300">Recibido. Te responderemos con los próximos pasos.</p> : null}
+      {submitted ? <p className="text-sm text-emerald-300">Recibido. Te responderemos con los proximos pasos.</p> : null}
     </form>
   );
 }

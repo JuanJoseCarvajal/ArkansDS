@@ -6,6 +6,7 @@ const links = [
   ['Casos de estudio', '/casos-estudio'],
   ['Sobre nosotros', '/sobre-nosotros'],
   ['Blog', '/blog'],
+  ['System Architecture', '/system-architecture'],
   ['Contacto', '/contacto']
 ];
 
@@ -16,7 +17,7 @@ export default function Footer() {
         <div>
           <p className="font-semibold tracking-[0.12em] text-white">ARKAN DX</p>
           <p className="mt-3 max-w-md">
-            Agencia UX/UI y desarrollo web para marcas que necesitan una experiencia digital clara, premium y orientada a leads.
+            Agencia hermetica de UX/UI, semiotica y desarrollo web para marcas que necesitan claridad, confianza y conversion medible.
           </p>
           <p className="mt-6">© {new Date().getFullYear()} ARKAN DX</p>
         </div>

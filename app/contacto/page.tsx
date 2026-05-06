@@ -4,9 +4,9 @@ import Container from '@/components/ui/Container';
 import Section from '@/components/ui/Section';
 
 export const metadata: Metadata = {
-  title: 'Contacto | Diagnóstico UX/UI y web',
+  title: 'Contacto | Lectura iniciatica UX/UI',
   description:
-    'Agenda un diagnóstico para mejorar UX/UI, desarrollo web, SEO técnico o estrategia digital de tu marca.'
+    'Agenda una lectura iniciatica para mejorar UX/UI, semiotica, recorrido, SEO tecnico y conversion de tu marca.'
 };
 
 export default function ContactoPage() {
@@ -14,11 +14,11 @@ export default function ContactoPage() {
     <Section stage="Contacto" tone="luminous" className="pt-24">
       <Container className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
         <div>
-          <p className="text-xs uppercase tracking-[0.28em] text-accent">Contacto</p>
-          <h1 className="mt-4 text-4xl font-semibold sm:text-6xl">Cuéntanos qué debe lograr tu próxima experiencia digital.</h1>
+          <p className="text-xs uppercase tracking-[0.28em] text-accent">Primer umbral</p>
+          <h1 className="mt-4 text-4xl font-semibold sm:text-6xl">Cuentanos que transformacion debe producir tu experiencia digital.</h1>
           <p className="mt-6 text-lg leading-8 text-white/72">
-            En el primer diagnóstico revisamos contexto, objetivos, fricciones actuales y oportunidades de alto impacto. Sin
-            llamadas eternas: saldrás con una lectura clara del camino.
+            En la primera lectura revisamos contexto, deseo, sintomas de friccion, signos actuales y oportunidades de alto
+            impacto. Sin misterio innecesario: saldras con una direccion clara.
           </p>
         </div>
         <ContactForm />

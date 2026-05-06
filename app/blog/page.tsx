@@ -5,9 +5,9 @@ import Section from '@/components/ui/Section';
 import { blogPosts } from '@/lib/site';
 
 export const metadata: Metadata = {
-  title: 'Blog de UX/UI, SEO y desarrollo web',
+  title: 'Insights de UX hermetico, semiotica y SEO',
   description:
-    'Insights sobre UX/UI, diseño de producto, SEO técnico, desarrollo Next.js y estrategia digital para equipos premium.'
+    'Articulos sobre UX iniciatico, semiotica de Peirce, topologia, psicoanalisis aplicado, SEO tecnico y desarrollo Next.js.'
 };
 
 export default function BlogPage() {
@@ -15,10 +15,11 @@ export default function BlogPage() {
     <>
       <Section stage="Insights" tone="luminous" className="pt-24">
         <Container className="max-w-4xl">
-          <p className="text-xs uppercase tracking-[0.28em] text-accent">Blog / Insights</p>
-          <h1 className="mt-4 text-4xl font-semibold sm:text-6xl">Ideas accionables para diseñar mejores decisiones digitales.</h1>
+          <p className="text-xs uppercase tracking-[0.28em] text-accent">Grimorio estrategico</p>
+          <h1 className="mt-4 text-4xl font-semibold sm:text-6xl">Lecturas accionables sobre signos, deseo, interfaces y conversion.</h1>
           <p className="mt-6 text-lg leading-8 text-white/72">
-            Contenido para fundadores, marketers y equipos de producto que quieren mejorar conversión, SEO y calidad de experiencia.
+            Contenido para fundadores, marketers y equipos de producto que quieren usar semiotica, UX, SEO y tecnologia para
+            orientar decisiones claras sin caer en persuasion vacia.
           </p>
         </Container>
       </Section>
@@ -30,7 +31,7 @@ export default function BlogPage() {
               <h2 className="mt-3 text-2xl font-semibold">{post.title}</h2>
               <p className="mt-4 text-white/65">Intención: {post.intent}</p>
               <Link href={post.slug} className="mt-6 inline-flex text-sm font-medium text-white/75 hover:text-white">
-                Leer estructura del artículo
+                Leer estructura del articulo
               </Link>
             </article>
           ))}

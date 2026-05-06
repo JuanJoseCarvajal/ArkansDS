@@ -1,19 +1,46 @@
-# ARKAN DX: implementación UX, SEO y frontend
+# ARKAN DX: implementación UX hermética, SEO y frontend
+
+## Marco iniciático
+
+La web se construye como un recorrido iniciatico y hermetico orientado a un resultado claro: convertir percepcion en confianza y confianza en leads cualificados. No se usa lo hermetico como decoracion visual, sino como metodo de analisis y arquitectura.
+
+Principios del sistema:
+
+- Psicoanalisis aplicado: detectar sintoma, deseo, objecion y resistencia en la experiencia digital. No es terapia ni diagnostico clinico; es lectura estrategica de fricciones, promesas y bloqueos de decision.
+- Semiotica de Peirce: cada pantalla se analiza como relacion entre signo, objeto e interpretante. El objetivo es que el usuario produzca una interpretacion clara y una accion posible.
+- Topologia del recorrido: la experiencia se modela por bordes, umbrales, bucles, salidas y puntos de retorno. La conversion se entiende como cruce de umbral, no como boton aislado.
+- Magia operativa en 11 pasos: secuencia de transformacion desde confusion hasta manifestacion medible.
+
+Los 11 pasos:
+
+| Paso | Operacion | Funcion UX/SEO | Resultado |
+|---|---|---|---|
+| 1 | Separacion | Distinguir ruido, signo y sintomas de friccion | Diagnostico real de conversion |
+| 2 | Purificacion | Eliminar exceso, contradiccion y carga cognitiva | Mensaje e interfaz mas claros |
+| 3 | Invocacion | Nombrar el deseo que mueve la busqueda | Propuesta de valor legible |
+| 4 | Inscripcion | Convertir estrategia en signos, jerarquias y patrones | Sistema visual/verbal consistente |
+| 5 | Correspondencia | Alinear promesa, evidencia, interfaz y accion | Confianza entre SEO, copy y UI |
+| 6 | Umbral | Disenar el momento de decision | CTAs y formularios sin friccion |
+| 7 | Transmutacion | Convertir objeciones en comprension | Argumentos, casos y prueba social |
+| 8 | Union | Integrar marca, deseo, tecnica y medicion | Experiencia coherente |
+| 9 | Revelacion | Hacer visible el valor implicito | Posicionamiento memorable |
+| 10 | Manifestacion | Llevar el sistema a codigo y contenido | Web Next.js lista para operar |
+| 11 | Retorno | Medir, interpretar y ajustar | Aprendizaje continuo |
 
 ## 1. Sitemap + SEO Structure
 
 | Nivel | Página | URL | Keyword principal | Keywords secundarias | Intención |
 |---|---|---|---|---|---|
-| 1 | Home | `/` | agencia UX/UI | agencia digital premium, desarrollo web Next.js, estrategia digital | Comercial transaccional |
-| 1 | Servicios | `/servicios` | servicios UX/UI | desarrollo web Next.js, diseño de producto digital, estrategia digital | Comercial |
-| 2 | UX/UI Design | `/servicios#ux-ui-design` | UX/UI design para productos digitales | diseño de interfaces, prototipado UX | Comercial |
-| 2 | Desarrollo web | `/servicios#desarrollo-web` | desarrollo web Next.js | web corporativa SEO, frontend performance | Comercial técnico |
-| 2 | Producto digital | `/servicios#producto-digital` | diseño de producto digital | product discovery, journey mapping | Comercial |
-| 2 | Estrategia digital | `/servicios#estrategia-digital` | estrategia digital | posicionamiento digital, arquitectura SEO | Comercial |
-| 1 | Casos de estudio | `/casos-estudio` | casos UX/UI | portfolio agencia digital, casos desarrollo web | Comercial investigativa |
-| 1 | Sobre nosotros | `/sobre-nosotros` | agencia digital UX/UI | equipo diseño producto, agencia Next.js | Confianza |
-| 1 | Blog | `/blog` | blog UX/UI | SEO técnico, diseño producto, Next.js | Informacional |
-| 1 | Contacto | `/contacto` | diagnóstico UX/UI | contacto agencia digital, consultoría web | Transaccional |
+| 1 | Home | `/` | diseno UX iniciatico | agencia UX/UI hermetica, semiotica UX, desarrollo web Next.js | Comercial transaccional |
+| 1 | Servicios | `/servicios` | servicios hermeticos UX/UI | arquitectura web hermetica, topologia UX, estrategia semiotica | Comercial |
+| 2 | Lectura UX/UI | `/servicios#ux-ui-design` | UX iniciatico | semiotica UX, analisis de friccion | Comercial |
+| 2 | Arquitectura web | `/servicios#desarrollo-web` | desarrollo web Next.js | web semantica SEO, analitica de conversion | Comercial tecnico |
+| 2 | Producto topologico | `/servicios#producto-digital` | topologia UX | journey mapping, umbrales de decision | Comercial |
+| 2 | Estrategia semiotica | `/servicios#estrategia-digital` | semiotica Peirce UX | estrategia digital, oferta como signo | Comercial |
+| 1 | Casos de estudio | `/casos-estudio` | casos UX hermetico | portfolio semiotica UX, casos desarrollo web | Comercial investigativa |
+| 1 | Sobre nosotros | `/sobre-nosotros` | agencia hermetica UX/UI | equipo estrategia semiotica, agencia Next.js | Confianza |
+| 1 | Blog | `/blog` | blog semiotica UX | psicoanalisis UX, topologia UX, SEO tecnico | Informacional |
+| 1 | Contacto | `/contacto` | lectura iniciatica UX | diagnostico UX, consultoria web hermetica | Transaccional |
 
 Jerarquía máxima: 2 niveles reales y anclas de servicio como tercer nivel semántico sin crear profundidad innecesaria.
 
@@ -27,8 +54,9 @@ Secciones:
 
 | Sección | Headings | Copy | CTA | UI | Visual |
 |---|---|---|---|---|---|
-| Hero | H1: Diseñamos experiencias digitales premium que convierten atención en oportunidades reales. | ARKAN DX combina diseño UX/UI, desarrollo web, producto digital y estrategia SEO para crear sitios que se sienten distintos, cargan rápido y explican con precisión por qué tu oferta merece una conversación. | Agendar diagnóstico / Ver casos | Layout 12 columnas, bloque de métricas laterales | Fondo oscuro premium con luz sutil, tipografía grande, sin mockups genéricos |
-| Problema | H2: La mayoría de webs de agencia se ven bien, pero no toman decisiones. | Una web premium no es una galería de efectos. Es una secuencia de argumentos, pruebas y microinteracciones que ayuda al visitante a entender valor, reducir riesgo y avanzar sin fricción. | Implícito hacia servicios | Texto editorial en dos columnas | Banda sobria de contraste |
+| Hero | H1: Disenamos experiencias digitales como ritos de claridad, deseo y conversion. | ARKAN DX une UX/UI, semiotica de Peirce, topologia del recorrido y analisis psicoanalitico aplicado para transformar una web en un sistema de decision. | Iniciar diagnostico / Ver casos | Layout 12 columnas, bloque de operaciones laterales | Fondo oscuro hermetico con luz sutil, tipografia grande, sin mockups genericos |
+| Sintoma | H2: La mayoria de webs muestran una oferta, pero no producen una transformacion. | Una web iniciatica no es una galeria de efectos. Es un pasaje: separa ruido, revela deseo, organiza signos y acompana al usuario hasta un umbral de accion claro. | Implicito hacia metodo | Texto editorial en dos columnas | Banda sobria de contraste |
+| Metodo 11 pasos | H2: Los 11 pasos de la magia aplicados a experiencia digital. | Secuencia operacional desde separacion hasta retorno. | Hacia servicios | Grid de operaciones | Cards con numero, principio y resultado |
 | Servicios destacados | H2: Diseño, tecnología y estrategia trabajando como un mismo sistema. H3 por servicio | Cards con resumen real de UX/UI, desarrollo Next.js, producto y estrategia. | Explorar servicio | Grid 2x2 | Cards con borde fino y estados hover |
 | Casos | H2: Resultados que se pueden explicar. H3 por caso | Casos orientados a activación, demos y escalabilidad visual. | Ver portfolio completo | Cards de resultado | Indicadores cuantitativos como señal visual |
 | Diferenciador | H2: Pensamos tu web como producto digital, no como folleto online. | Cada página tiene una intención: captar demanda, educar, demostrar criterio o generar contacto. | Hacia contacto | Texto + argumento | Sección sin card para elevar claridad |

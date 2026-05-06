@@ -5,9 +5,9 @@ import Section from '@/components/ui/Section';
 import { cases } from '@/lib/site';
 
 export const metadata: Metadata = {
-  title: 'Casos de estudio UX/UI y desarrollo web',
+  title: 'Casos de estudio UX hermetico y web',
   description:
-    'Portfolio de proyectos UX/UI, producto digital y desarrollo web orientados a conversión, confianza y crecimiento medible.'
+    'Casos de UX/UI, semiotica, producto digital y desarrollo web orientados a conversion, confianza y crecimiento medible.'
 };
 
 export default function CasosPage() {
@@ -15,11 +15,11 @@ export default function CasosPage() {
     <>
       <Section stage="Portfolio" tone="luminous" className="pt-24">
         <Container className="max-w-4xl">
-          <p className="text-xs uppercase tracking-[0.28em] text-accent">Casos de estudio</p>
-          <h1 className="mt-4 text-4xl font-semibold sm:text-6xl">Trabajo diseñado para mover métricas, no solo pantallas.</h1>
+          <p className="text-xs uppercase tracking-[0.28em] text-accent">Pruebas de manifestacion</p>
+          <h1 className="mt-4 text-4xl font-semibold sm:text-6xl">Trabajo disenado para transformar sintomas en metricas.</h1>
           <p className="mt-6 text-lg leading-8 text-white/72">
-            Selección de proyectos donde la estrategia, la interfaz y la tecnología se integraron para mejorar activación,
-            confianza comercial y calidad de leads.
+            Seleccion de proyectos donde lectura simbolica, interfaz, topologia del recorrido y tecnologia se integraron para
+            mejorar activacion, confianza comercial y calidad de leads.
           </p>
         </Container>
       </Section>
@@ -42,9 +42,9 @@ export default function CasosPage() {
       </Section>
       <Section tone="luminous">
         <Container className="text-center">
-          <h2 className="text-3xl font-semibold sm:text-5xl">Tu caso debería contar una mejora clara.</h2>
-          <p className="mx-auto mt-5 max-w-2xl text-white/70">Definamos qué métrica importa antes de diseñar la primera pantalla.</p>
-          <div className="mt-8"><Button href="/contacto">Planear nuevo caso</Button></div>
+          <h2 className="text-3xl font-semibold sm:text-5xl">Toda magia debe probarse en una metrica.</h2>
+          <p className="mx-auto mt-5 max-w-2xl text-white/70">Definamos que transformacion debe ocurrir antes de disenar la primera pantalla.</p>
+          <div className="mt-8"><Button href="/contacto">Iniciar lectura</Button></div>
         </Container>
       </Section>
     </>

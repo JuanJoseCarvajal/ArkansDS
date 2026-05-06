@@ -6,16 +6,16 @@ import Footer from '@/components/sections/Footer';
 export const metadata: Metadata = {
   metadataBase: new URL('https://arkandx.com'),
   title: {
-    default: 'ARKAN DX | Agencia UX/UI y desarrollo web premium',
+    default: 'ARKAN DX | Diseno iniciatico de experiencias digitales',
     template: '%s | ARKAN DX'
   },
   description:
-    'Agencia digital especializada en UX/UI, desarrollo web Next.js, producto digital y estrategia para convertir visitantes en leads.',
-  keywords: ['agencia UX UI', 'desarrollo web Next.js', 'diseno de producto digital', 'estrategia digital'],
+    'Agencia hermetica de UX/UI, semiotica, producto digital y desarrollo Next.js orientada a conversion clara.',
+  keywords: ['diseno UX iniciatico', 'semiotica UX', 'agencia UX UI', 'desarrollo web Next.js', 'estrategia digital'],
   openGraph: {
-    title: 'ARKAN DX | Agencia UX/UI y desarrollo web premium',
+    title: 'ARKAN DX | Diseno iniciatico de experiencias digitales',
     description:
-      'Diseñamos experiencias digitales premium que combinan estrategia, UX/UI, SEO y desarrollo frontend para generar crecimiento.',
+      'Disenamos experiencias digitales desde UX, semiotica Peirceana, topologia, estrategia y desarrollo frontend.',
     url: 'https://arkandx.com',
     siteName: 'ARKAN DX',
     locale: 'es_ES',

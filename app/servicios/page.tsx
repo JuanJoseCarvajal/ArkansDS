@@ -5,9 +5,9 @@ import Section from '@/components/ui/Section';
 import { services } from '@/lib/site';
 
 export const metadata: Metadata = {
-  title: 'Servicios UX/UI, desarrollo web y estrategia digital',
+  title: 'Servicios hermeticos de UX/UI y estrategia',
   description:
-    'Servicios de UX/UI, desarrollo web Next.js, diseño de producto digital y estrategia para marcas que buscan crecer con claridad.'
+    'Lectura UX/UI iniciatica, arquitectura web hermetica, topologia de producto y estrategia semiotica orientadas a conversion.'
 };
 
 export default function ServiciosPage() {
@@ -15,11 +15,11 @@ export default function ServiciosPage() {
     <>
       <Section stage="Servicios" tone="luminous" className="pt-24">
         <Container className="max-w-4xl">
-          <p className="text-xs uppercase tracking-[0.28em] text-accent">Servicios digitales premium</p>
-          <h1 className="mt-4 text-4xl font-semibold sm:text-6xl">UX/UI, desarrollo web y estrategia para convertir complejidad en crecimiento.</h1>
+          <p className="text-xs uppercase tracking-[0.28em] text-accent">Operaciones iniciaticas</p>
+          <h1 className="mt-4 text-4xl font-semibold sm:text-6xl">UX/UI, semiotica y desarrollo para convertir complejidad en accion clara.</h1>
           <p className="mt-6 text-lg leading-8 text-white/72">
-            Trabajamos desde la definición de producto hasta la implementación frontend para que tu web no dependa de adornos:
-            debe explicar, convencer, posicionar y generar demanda cualificada.
+            Trabajamos desde el sintoma hasta el sistema: analizamos deseo, objecion, signos, recorrido y tecnica para que tu web
+            explique, convenza, posicione y genere demanda cualificada.
           </p>
         </Container>
       </Section>
@@ -44,9 +44,9 @@ export default function ServiciosPage() {
       </Section>
       <Section tone="tense">
         <Container className="grid gap-8 lg:grid-cols-2">
-          <h2 className="text-3xl font-semibold sm:text-5xl">Proceso de trabajo: estrategia antes de producción.</h2>
+          <h2 className="text-3xl font-semibold sm:text-5xl">Proceso de trabajo: lectura antes de manifestacion.</h2>
           <ol className="grid gap-4 text-white/72">
-            {['Diagnóstico de negocio, usuarios y posicionamiento.', 'Arquitectura de información, mensajes y flujos clave.', 'Diseño visual, prototipo y sistema de componentes.', 'Desarrollo Next.js, SEO técnico, analítica y handoff.'].map((step) => (
+            {['Lectura del sintoma: negocio, usuario, deseo y objecion.', 'Triada semiotica: signo, interpretante y accion esperada.', 'Topologia del recorrido: bordes, umbrales, bucles y salidas.', 'Manifestacion: Next.js, SEO tecnico, analitica y sistema visual.'].map((step) => (
               <li key={step} className="rounded-lg border border-white/10 bg-background/50 p-4">{step}</li>
             ))}
           </ol>
@@ -54,7 +54,7 @@ export default function ServiciosPage() {
       </Section>
       <Section tone="luminous">
         <Container className="text-center">
-          <h2 className="mx-auto max-w-3xl text-3xl font-semibold sm:text-5xl">Construyamos una experiencia que haga más fácil elegirte.</h2>
+          <h2 className="mx-auto max-w-3xl text-3xl font-semibold sm:text-5xl">Construyamos una experiencia que vuelva evidente por que elegirte.</h2>
           <div className="mt-8">
             <Button href="/contacto" ariaLabel="Hablar sobre servicios digitales">Hablar del proyecto</Button>
           </div>

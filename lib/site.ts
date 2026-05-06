@@ -1,31 +1,89 @@
 export const services = [
   {
-    title: 'UX/UI design para productos digitales',
+    title: 'Lectura UX/UI iniciatica',
     slug: '/servicios#ux-ui-design',
     summary:
-      'Diseñamos interfaces claras, deseables y medibles para que cada pantalla reduzca fricción y acerque al usuario a una decisión.',
-    bullets: ['Research accionable', 'Wireframes y prototipos', 'Design systems escalables']
+      'Leemos la experiencia como un campo de signos, deseo y friccion para disenar interfaces que orientan la decision sin manipularla.',
+    bullets: ['Sintoma de friccion', 'Mapa de deseo', 'Prototipo ritual']
   },
   {
-    title: 'Desarrollo web Next.js',
+    title: 'Arquitectura web hermetica',
     slug: '/servicios#desarrollo-web',
     summary:
-      'Construimos sitios rápidos, semánticos y listos para crecer con SEO técnico, performance y componentes reutilizables.',
-    bullets: ['Arquitectura frontend', 'Core Web Vitals', 'Integración CMS y analítica']
+      'Construimos sitios rapidos, semanticos y escalables donde cada pagina opera como una camara: entrada, tension, prueba y conversion.',
+    bullets: ['Next.js semantico', 'SEO tecnico', 'Analitica de umbrales']
   },
   {
-    title: 'Diseño de producto digital',
+    title: 'Diseno topologico de producto',
     slug: '/servicios#producto-digital',
     summary:
-      'Convertimos ideas, servicios y plataformas en productos con propuesta clara, flujos sólidos y una experiencia memorable.',
-    bullets: ['Product discovery', 'Journey mapping', 'Validación y mejora continua']
+      'Modelamos recorridos, bordes, repeticiones y puntos de paso para convertir complejidad en un producto comprensible y deseable.',
+    bullets: ['Nudos de uso', 'Umbrales de confianza', 'Validacion simbolica']
   },
   {
-    title: 'Estrategia digital',
+    title: 'Estrategia semiotica y comercial',
     slug: '/servicios#estrategia-digital',
     summary:
-      'Alineamos posicionamiento, contenido, adquisición y conversión para que la web funcione como un activo comercial.',
-    bullets: ['Arquitectura SEO', 'Mensajes de valor', 'Roadmap de crecimiento']
+      'Alineamos signo, interpretante y accion para que posicionamiento, contenido y conversion funcionen como un sistema legible.',
+    bullets: ['Triada de Peirce', 'Arquitectura SEO', 'Oferta como signo']
+  }
+];
+
+export const initiaticSteps = [
+  {
+    name: 'Separacion',
+    principle: 'Distinguir el ruido del signo',
+    outcome: 'Diagnostico del problema real de conversion'
+  },
+  {
+    name: 'Purificacion',
+    principle: 'Eliminar friccion, exceso y contradiccion',
+    outcome: 'Interfaz y narrativa con menor carga cognitiva'
+  },
+  {
+    name: 'Invocacion',
+    principle: 'Nombrar el deseo que mueve la busqueda',
+    outcome: 'Propuesta de valor precisa y emocionalmente legible'
+  },
+  {
+    name: 'Inscripcion',
+    principle: 'Convertir estrategia en signos, jerarquias y patrones',
+    outcome: 'Sistema visual y verbal consistente'
+  },
+  {
+    name: 'Correspondencia',
+    principle: 'Alinear lo que se promete, se muestra y se puede hacer',
+    outcome: 'Confianza entre SEO, copy, UI y producto'
+  },
+  {
+    name: 'Umbral',
+    principle: 'Disenar el punto donde el usuario decide avanzar',
+    outcome: 'CTAs y formularios sin friccion innecesaria'
+  },
+  {
+    name: 'Transmutacion',
+    principle: 'Transformar objeciones en comprension',
+    outcome: 'Casos, pruebas y argumentos comerciales claros'
+  },
+  {
+    name: 'Union',
+    principle: 'Integrar marca, deseo, tecnica y medicion',
+    outcome: 'Experiencia digital coherente de punta a punta'
+  },
+  {
+    name: 'Revelacion',
+    principle: 'Hacer visible el valor que antes estaba implicito',
+    outcome: 'Mensaje memorable y posicionamiento diferencial'
+  },
+  {
+    name: 'Manifestacion',
+    principle: 'Llevar el sistema a codigo, performance y contenido',
+    outcome: 'Web Next.js lista para operar y escalar'
+  },
+  {
+    name: 'Retorno',
+    principle: 'Medir, interpretar y ajustar el circuito',
+    outcome: 'Aprendizaje continuo orientado a leads cualificados'
   }
 ];
 
@@ -55,27 +113,27 @@ export const cases = [
 
 export const blogPosts = [
   {
-    title: 'Cómo diseñar una web de agencia digital que convierta leads cualificados',
+    title: 'Los 11 pasos iniciaticos para convertir una web en sistema de decision',
     slug: '/blog/web-agencia-digital-convierte-leads',
-    keyword: 'web agencia digital',
+    keyword: 'web hermetica para conversion',
     intent: 'Informacional comercial'
   },
   {
-    title: 'Arquitectura SEO para servicios UX/UI: estructura, contenidos e interlinking',
+    title: 'Peirce aplicado a UX: signo, interpretante y accion en interfaces',
     slug: '/blog/arquitectura-seo-servicios-ux-ui',
-    keyword: 'SEO para servicios UX UI',
+    keyword: 'semiotica Peirce UX',
     intent: 'Informacional'
   },
   {
-    title: 'Design systems en startups: cuándo crearlos y cómo evitar deuda visual',
+    title: 'Topologia del deseo digital: bordes, umbrales y recorridos',
     slug: '/blog/design-systems-startups',
-    keyword: 'design system startup',
+    keyword: 'topologia UX',
     intent: 'Informacional'
   },
   {
-    title: 'Next.js para sitios corporativos premium: performance, SEO y CMS',
+    title: 'Analisis psicoanalitico de una homepage: sintoma, deseo y objecion',
     slug: '/blog/nextjs-sitios-corporativos-premium',
-    keyword: 'Next.js SEO CMS',
+    keyword: 'psicoanalisis UX',
     intent: 'Informacional técnico'
   }
 ];

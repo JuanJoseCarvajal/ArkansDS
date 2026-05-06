@@ -3,16 +3,18 @@ import Container from '@/components/ui/Container';
 import Button from '@/components/ui/Button';
 
 const links = [
-  { href: '/about', label: 'About' },
-  { href: '/services', label: 'Services' },
-  { href: '/contact', label: 'Contact' }
+  { href: '/servicios', label: 'Servicios' },
+  { href: '/casos-estudio', label: 'Casos' },
+  { href: '/sobre-nosotros', label: 'Nosotros' },
+  { href: '/blog', label: 'Insights' },
+  { href: '/contacto', label: 'Contacto' }
 ];
 
 export default function Navbar() {
   return (
     <header className="sticky top-0 z-50 border-b border-white/10 bg-background/80 backdrop-blur">
       <Container className="flex h-16 items-center justify-between">
-        <Link href="/" className="text-sm font-semibold tracking-[0.2em] text-white/90">
+        <Link href="/" className="text-sm font-semibold tracking-[0.12em] text-white/90">
           ARKAN DX
         </Link>
         <nav aria-label="Primary navigation" className="hidden items-center gap-8 md:flex">
@@ -22,8 +24,8 @@ export default function Navbar() {
             </Link>
           ))}
         </nav>
-        <Button href="/contact" className="px-5 py-2 text-xs" ariaLabel="Book a consultation">
-          Book a Consultation
+        <Button href="/contacto" className="px-5 py-2 text-xs" ariaLabel="Agendar una consulta">
+          Agendar consulta
         </Button>
       </Container>
     </header>

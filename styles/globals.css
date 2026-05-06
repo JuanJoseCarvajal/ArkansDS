@@ -24,14 +24,6 @@ body {
 }
 
 body {
-  background-image:
-    radial-gradient(circle at 20% 0%, rgba(92, 136, 255, 0.15), transparent 36%),
-    radial-gradient(circle at 80% 30%, rgba(170, 138, 87, 0.14), transparent 42%),
-    linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0));
-  @apply bg-background text-ink antialiased;
-}
-
-body {
   @apply bg-ether;
 }
 
@@ -44,7 +36,8 @@ body {
 body {
   background-image:
     radial-gradient(circle at 10% 10%, rgba(79, 130, 255, 0.12), transparent 38%),
-    radial-gradient(circle at 90% 20%, rgba(139, 111, 61, 0.1), transparent 35%);
+    radial-gradient(circle at 90% 20%, rgba(139, 111, 61, 0.1), transparent 35%),
+    linear-gradient(180deg, #060607 0%, #0b0b0f 45%, #060607 100%);
 }
 
 a {

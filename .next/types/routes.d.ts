@@ -4,19 +4,16 @@
 type AppRoutes = "/" | "/blog" | "/casos-estudio" | "/contacto" | "/servicios" | "/sobre-nosotros" | "/system-architecture"
 type PageRoutes = never
 type LayoutRoutes = "/"
-type RedirectRoutes = "/about" | "/contact" | "/services"
+type RedirectRoutes = never
 type RewriteRoutes = never
 type Routes = AppRoutes | PageRoutes | LayoutRoutes | RedirectRoutes | RewriteRoutes
 
 
 interface ParamMap {
   "/": {}
-  "/about": {}
   "/blog": {}
   "/casos-estudio": {}
-  "/contact": {}
   "/contacto": {}
-  "/services": {}
   "/servicios": {}
   "/sobre-nosotros": {}
   "/system-architecture": {}

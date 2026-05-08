@@ -4,7 +4,7 @@ import Navbar from '@/components/sections/Navbar';
 import Footer from '@/components/sections/Footer';
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://arkandx.com'),
+  metadataBase: new URL('https://arkands.com'),
   title: {
     default: 'ARKAN DX | Diseno iniciatico de experiencias digitales',
     template: '%s | ARKAN DX'
@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     title: 'ARKAN DX | Diseno iniciatico de experiencias digitales',
     description:
       'Disenamos experiencias digitales desde UX, semiotica Peirceana, topologia, estrategia y desarrollo frontend.',
-    url: 'https://arkandx.com',
+    url: 'https://arkands.com',
     siteName: 'ARKAN DX',
     locale: 'es_ES',
     type: 'website'

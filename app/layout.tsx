@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import '@/styles/globals.css';
 import Navbar from '@/components/sections/Navbar';
 import Footer from '@/components/sections/Footer';
+import { I18nProvider } from '@/lib/i18n';
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://arkands.com'),
@@ -27,9 +28,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="es">
       <body>
-        <Navbar />
-        <main>{children}</main>
-        <Footer />
+        <I18nProvider>
+          <Navbar />
+          <main>{children}</main>
+          <Footer />
+        </I18nProvider>
       </body>
     </html>
   );

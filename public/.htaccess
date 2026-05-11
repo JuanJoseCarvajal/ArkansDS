@@ -1,3 +1,5 @@
+DirectoryIndex index.html
+
 RewriteEngine On
 
 Redirect 301 /services/ /servicios/

@@ -1,9 +1,11 @@
 'use client';
 
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
+import { useRouter } from 'next/navigation';
 import { CalendarDays, LayoutDashboard, MessageSquareText, ShieldCheck, UsersRound } from 'lucide-react';
 import Container from '@/components/ui/Container';
 import Section from '@/components/ui/Section';
+import { useAuth } from '@/lib/auth';
 import { useI18n } from '@/lib/i18n';
 import { backofficeContent } from '@/lib/site';
 
@@ -39,18 +41,39 @@ const icons = [LayoutDashboard, UsersRound, MessageSquareText, CalendarDays, Shi
 
 function StatusPill({ children }: { children: string }) {
   return (
-    <span className="inline-flex rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs font-medium text-white/75">
+    <span className="mt-2 inline-flex rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs font-medium text-white/75">
       {children}
     </span>
   );
 }
 
 export default function BackofficePage() {
+  const router = useRouter();
   const { locale } = useI18n();
+  const { user, isReady, logout } = useAuth();
   const [activeTab, setActiveTab] = useState(0);
   const copy = backofficeContent[locale];
-  const status = copy.status;
-  const visiblePanel = useMemo(() => copy.tabs[activeTab], [activeTab, copy.tabs]);
+  const isClient = user?.role === 'client';
+  const tabs = isClient ? copy.clientTabs : copy.tabs;
+  const visiblePanel = useMemo(() => tabs[Math.min(activeTab, tabs.length - 1)], [activeTab, tabs]);
+
+  useEffect(() => {
+    if (isReady && !user) router.replace('/login');
+  }, [isReady, router, user]);
+
+  useEffect(() => {
+    if (activeTab > tabs.length - 1) setActiveTab(0);
+  }, [activeTab, tabs.length]);
+
+  if (!isReady || !user) {
+    return (
+      <Section stage="Backoffice" tone="luminous" className="pt-24">
+        <Container>
+          <div className="rounded-lg border border-white/10 bg-surface p-6 text-white/70">{copy.loading}</div>
+        </Container>
+      </Section>
+    );
+  }
 
   return (
     <Section stage="Backoffice" tone="luminous" className="pt-24">
@@ -58,10 +81,15 @@ export default function BackofficePage() {
         <div className="grid gap-8 lg:grid-cols-[260px_1fr]">
           <aside className="rounded-lg border border-white/10 bg-surface p-4 lg:sticky lg:top-24 lg:self-start">
             <p className="text-xs uppercase tracking-[0.28em] text-accent">{copy.eyebrow}</p>
-            <h1 className="mt-3 text-3xl font-semibold">{copy.title}</h1>
-            <p className="mt-4 text-sm leading-6 text-white/65">{copy.intro}</p>
+            <h1 className="mt-3 text-3xl font-semibold">{isClient ? copy.clientTitle : copy.title}</h1>
+            <p className="mt-4 text-sm leading-6 text-white/65">{isClient ? copy.clientIntro : copy.intro}</p>
+            <div className="mt-5 rounded-md border border-white/10 bg-background/40 p-3">
+              <p className="text-sm font-medium">{user.name}</p>
+              <p className="mt-1 text-xs text-white/55">{user.email}</p>
+              <StatusPill>{isClient ? copy.roles.client : copy.roles.agency}</StatusPill>
+            </div>
             <nav className="mt-6 grid gap-2" aria-label="Backoffice sections">
-              {copy.tabs.map((tab, index) => {
+              {tabs.map((tab, index) => {
                 const Icon = icons[index];
                 const isActive = activeTab === index;
                 return (
@@ -79,11 +107,21 @@ export default function BackofficePage() {
                 );
               })}
             </nav>
+            <button
+              type="button"
+              onClick={() => {
+                logout();
+                router.replace('/login');
+              }}
+              className="mt-4 w-full rounded-md border border-white/10 px-3 py-2 text-left text-sm text-white/65 transition hover:bg-white/10 hover:text-white"
+            >
+              {copy.logout}
+            </button>
           </aside>
 
           <div className="space-y-6">
             <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
-              {copy.metrics.map(([label, value, delta]) => (
+              {(isClient ? copy.clientMetrics : copy.metrics).map(([label, value, delta]) => (
                 <article key={label} className="rounded-lg border border-white/10 bg-surface p-5">
                   <p className="text-sm text-white/55">{label}</p>
                   <p className="mt-3 text-3xl font-semibold">{value}</p>
@@ -98,7 +136,7 @@ export default function BackofficePage() {
                   <p className="text-xs uppercase tracking-[0.24em] text-accent">{visiblePanel}</p>
                   <h2 className="mt-2 text-2xl font-semibold">{copy.requestsTitle}</h2>
                 </div>
-                <StatusPill>{status.urgent}</StatusPill>
+                <StatusPill>{isClient ? copy.status.active : copy.status.urgent}</StatusPill>
               </div>
               <div className="mt-5 overflow-x-auto">
                 <table className="w-full min-w-[680px] text-left text-sm">
@@ -110,12 +148,12 @@ export default function BackofficePage() {
                     </tr>
                   </thead>
                   <tbody>
-                    {requests.map(([request, client, priority]) => (
+                    {(isClient ? requests.slice(0, 3) : requests).map(([request, client, priority]) => (
                       <tr key={request}>
                         <td className="border-b border-white/5 py-4 text-white/85">{request}</td>
-                        <td className="border-b border-white/5 py-4 text-white/65">{client}</td>
+                        <td className="border-b border-white/5 py-4 text-white/65">{isClient ? user.name : client}</td>
                         <td className="border-b border-white/5 py-4">
-                          <StatusPill>{status[priority as keyof typeof status]}</StatusPill>
+                          <StatusPill>{copy.status[priority as keyof typeof copy.status]}</StatusPill>
                         </td>
                       </tr>
                     ))}
@@ -124,68 +162,83 @@ export default function BackofficePage() {
               </div>
             </section>
 
-            <div className="grid gap-6 xl:grid-cols-2">
+            {isClient ? (
               <section className="rounded-lg border border-white/10 bg-surface p-5">
-                <h2 className="text-2xl font-semibold">{copy.clientsTitle}</h2>
-                <div className="mt-5 grid gap-3">
-                  {clients.map(([client, owner, clientStatus, value]) => (
-                    <article key={client} className="grid gap-3 rounded-md border border-white/10 bg-background/40 p-4 sm:grid-cols-[1fr_auto] sm:items-center">
-                      <div>
-                        <p className="font-medium">{client}</p>
-                        <p className="mt-1 text-sm text-white/55">
-                          {copy.columns.owner}: {owner}
-                        </p>
-                      </div>
-                      <div className="flex items-center gap-3">
-                        <StatusPill>{status[clientStatus as keyof typeof status]}</StatusPill>
-                        <span className="text-sm font-semibold text-white/80">{value}</span>
-                      </div>
-                    </article>
-                  ))}
-                </div>
-              </section>
-
-              <section className="rounded-lg border border-white/10 bg-surface p-5">
-                <h2 className="text-2xl font-semibold">{copy.appointmentsTitle}</h2>
-                <div className="mt-5 grid gap-3">
-                  {appointments.map(([date, client, appointment]) => (
-                    <article key={`${date}-${client}`} className="rounded-md border border-white/10 bg-background/40 p-4">
-                      <p className="text-sm text-accent">{date}</p>
-                      <p className="mt-2 font-medium">{appointment}</p>
-                      <p className="mt-1 text-sm text-white/55">{client}</p>
-                    </article>
-                  ))}
-                </div>
-              </section>
-            </div>
-
-            <div className="grid gap-6 xl:grid-cols-[0.9fr_1.1fr]">
-              <section className="rounded-lg border border-white/10 bg-surface p-5">
-                <h2 className="text-2xl font-semibold">{copy.usersTitle}</h2>
-                <div className="mt-5 grid gap-3">
-                  {users.map(([name, role, userStatus]) => (
-                    <article key={name} className="flex items-center justify-between gap-4 rounded-md border border-white/10 bg-background/40 p-4">
-                      <div>
-                        <p className="font-medium">{name}</p>
-                        <p className="mt-1 text-sm text-white/55">{role}</p>
-                      </div>
-                      <StatusPill>{status[userStatus as keyof typeof status]}</StatusPill>
-                    </article>
-                  ))}
-                </div>
-              </section>
-
-              <section className="rounded-lg border border-white/10 bg-surface p-5">
-                <h2 className="text-2xl font-semibold">{copy.enhancementsTitle}</h2>
-                <ul className="mt-5 grid gap-3 text-sm leading-6 text-white/70">
-                  {copy.enhancements.map((item) => (
-                    <li key={item} className="rounded-md border border-white/10 bg-background/40 p-4">
+                <h2 className="text-2xl font-semibold">{copy.clientWorkspaceTitle}</h2>
+                <div className="mt-5 grid gap-3 md:grid-cols-3">
+                  {copy.clientWorkspace.map((item) => (
+                    <article key={item} className="rounded-md border border-white/10 bg-background/40 p-4 text-sm leading-6 text-white/70">
                       {item}
-                    </li>
+                    </article>
                   ))}
-                </ul>
+                </div>
               </section>
-            </div>
+            ) : (
+              <div className="grid gap-6 xl:grid-cols-2">
+                <section className="rounded-lg border border-white/10 bg-surface p-5">
+                  <h2 className="text-2xl font-semibold">{copy.clientsTitle}</h2>
+                  <div className="mt-5 grid gap-3">
+                    {clients.map(([client, owner, clientStatus, value]) => (
+                      <article key={client} className="grid gap-3 rounded-md border border-white/10 bg-background/40 p-4 sm:grid-cols-[1fr_auto] sm:items-center">
+                        <div>
+                          <p className="font-medium">{client}</p>
+                          <p className="mt-1 text-sm text-white/55">
+                            {copy.columns.owner}: {owner}
+                          </p>
+                        </div>
+                        <div className="flex items-center gap-3">
+                          <StatusPill>{copy.status[clientStatus as keyof typeof copy.status]}</StatusPill>
+                          <span className="text-sm font-semibold text-white/80">{value}</span>
+                        </div>
+                      </article>
+                    ))}
+                  </div>
+                </section>
+
+                <section className="rounded-lg border border-white/10 bg-surface p-5">
+                  <h2 className="text-2xl font-semibold">{copy.appointmentsTitle}</h2>
+                  <div className="mt-5 grid gap-3">
+                    {appointments.map(([date, client, appointment]) => (
+                      <article key={`${date}-${client}`} className="rounded-md border border-white/10 bg-background/40 p-4">
+                        <p className="text-sm text-accent">{date}</p>
+                        <p className="mt-2 font-medium">{appointment}</p>
+                        <p className="mt-1 text-sm text-white/55">{client}</p>
+                      </article>
+                    ))}
+                  </div>
+                </section>
+              </div>
+            )}
+
+            {!isClient ? (
+              <div className="grid gap-6 xl:grid-cols-[0.9fr_1.1fr]">
+                <section className="rounded-lg border border-white/10 bg-surface p-5">
+                  <h2 className="text-2xl font-semibold">{copy.usersTitle}</h2>
+                  <div className="mt-5 grid gap-3">
+                    {users.map(([name, role, userStatus]) => (
+                      <article key={name} className="flex items-center justify-between gap-4 rounded-md border border-white/10 bg-background/40 p-4">
+                        <div>
+                          <p className="font-medium">{name}</p>
+                          <p className="mt-1 text-sm text-white/55">{role}</p>
+                        </div>
+                        <StatusPill>{copy.status[userStatus as keyof typeof copy.status]}</StatusPill>
+                      </article>
+                    ))}
+                  </div>
+                </section>
+
+                <section className="rounded-lg border border-white/10 bg-surface p-5">
+                  <h2 className="text-2xl font-semibold">{copy.enhancementsTitle}</h2>
+                  <ul className="mt-5 grid gap-3 text-sm leading-6 text-white/70">
+                    {copy.enhancements.map((item) => (
+                      <li key={item} className="rounded-md border border-white/10 bg-background/40 p-4">
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                </section>
+              </div>
+            ) : null}
           </div>
         </div>
       </Container>

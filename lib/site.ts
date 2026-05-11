@@ -13,7 +13,7 @@ export const siteContent = {
         { href: '/casos-estudio', label: 'Casos' },
         { href: '/sobre-nosotros', label: 'Nosotros' },
         { href: '/blog', label: 'Insights' },
-        { href: '/backoffice', label: 'Backoffice' },
+        { href: '/system-architecture', label: 'Design System' },
         { href: '/contacto', label: 'Contacto' }
       ],
       cta: 'Agendar consulta',
@@ -28,6 +28,7 @@ export const siteContent = {
         ['Casos de estudio', '/casos-estudio'],
         ['Sobre nosotros', '/sobre-nosotros'],
         ['Blog', '/blog'],
+        ['Design System', '/system-architecture'],
         ['Backoffice', '/backoffice'],
         ['Contacto', '/contacto']
       ]
@@ -218,7 +219,7 @@ export const siteContent = {
         { href: '/casos-estudio', label: 'Cases' },
         { href: '/sobre-nosotros', label: 'About' },
         { href: '/blog', label: 'Insights' },
-        { href: '/backoffice', label: 'Backoffice' },
+        { href: '/system-architecture', label: 'Design System' },
         { href: '/contacto', label: 'Contact' }
       ],
       cta: 'Book a call',
@@ -233,6 +234,7 @@ export const siteContent = {
         ['Case studies', '/casos-estudio'],
         ['About us', '/sobre-nosotros'],
         ['Blog', '/blog'],
+        ['Design System', '/system-architecture'],
         ['Backoffice', '/backoffice'],
         ['Contact', '/contacto']
       ]
@@ -420,20 +422,42 @@ export const siteContent = {
 export const backofficeContent = {
   es: {
     title: 'Backoffice de agencia',
+    clientTitle: 'Portal de cliente',
     eyebrow: 'Operacion interna',
     intro:
       'Centro operativo para seguir clientes, solicitudes, citas, usuarios internos y rendimiento comercial de ARKAN DX.',
+    clientIntro:
+      'Espacio privado para revisar solicitudes, citas, estado del proyecto y proximos entregables con el equipo de ARKAN DX.',
+    loading: 'Validando sesion...',
+    logout: 'Cerrar sesion',
+    roles: {
+      client: 'Cliente',
+      agency: 'Usuario de agencia'
+    },
     metrics: [
       ['Clientes activos', '18', '+4 este mes'],
       ['Solicitudes abiertas', '27', '9 de alta prioridad'],
       ['Citas agendadas', '12', '5 esta semana'],
       ['Ingresos pipeline', '$86.4k', '+18% mensual']
     ],
+    clientMetrics: [
+      ['Solicitudes activas', '3', '1 en revision'],
+      ['Proxima cita', 'May 12', '09:30'],
+      ['Entregables', '5', '2 listos para revisar'],
+      ['Estado general', 'Activo', 'En buen ritmo']
+    ],
     tabs: ['Dashboard', 'Clientes', 'Solicitudes', 'Citas', 'Usuarios'],
+    clientTabs: ['Dashboard', 'Solicitudes', 'Citas'],
     requestsTitle: 'Solicitudes recientes',
     clientsTitle: 'Clientes',
     appointmentsTitle: 'Citas proximas',
     usersTitle: 'Equipo interno',
+    clientWorkspaceTitle: 'Tu espacio de proyecto',
+    clientWorkspace: [
+      'Ver entregables pendientes y aprobados.',
+      'Responder comentarios del equipo estrategico.',
+      'Agendar o reprogramar citas de trabajo.'
+    ],
     status: {
       discovery: 'Descubrimiento',
       proposal: 'Propuesta',
@@ -463,20 +487,42 @@ export const backofficeContent = {
   },
   en: {
     title: 'Agency backoffice',
+    clientTitle: 'Client portal',
     eyebrow: 'Internal operations',
     intro:
       'Operating center to track clients, requests, appointments, internal users and commercial performance for ARKAN DX.',
+    clientIntro:
+      'Private space to review requests, appointments, project status and upcoming deliverables with the ARKAN DX team.',
+    loading: 'Validating session...',
+    logout: 'Log out',
+    roles: {
+      client: 'Client',
+      agency: 'Agency user'
+    },
     metrics: [
       ['Active clients', '18', '+4 this month'],
       ['Open requests', '27', '9 high priority'],
       ['Booked appointments', '12', '5 this week'],
       ['Pipeline revenue', '$86.4k', '+18% monthly']
     ],
+    clientMetrics: [
+      ['Active requests', '3', '1 in review'],
+      ['Next appointment', 'May 12', '09:30'],
+      ['Deliverables', '5', '2 ready to review'],
+      ['Overall status', 'Active', 'Good pace']
+    ],
     tabs: ['Dashboard', 'Clients', 'Requests', 'Appointments', 'Users'],
+    clientTabs: ['Dashboard', 'Requests', 'Appointments'],
     requestsTitle: 'Recent requests',
     clientsTitle: 'Clients',
     appointmentsTitle: 'Upcoming appointments',
     usersTitle: 'Internal team',
+    clientWorkspaceTitle: 'Your project space',
+    clientWorkspace: [
+      'View pending and approved deliverables.',
+      'Reply to comments from the strategy team.',
+      'Book or reschedule working sessions.'
+    ],
     status: {
       discovery: 'Discovery',
       proposal: 'Proposal',

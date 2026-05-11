@@ -3,11 +3,14 @@
 import Link from 'next/link';
 import Container from '@/components/ui/Container';
 import Button from '@/components/ui/Button';
+import { useAuth } from '@/lib/auth';
 import { useI18n } from '@/lib/i18n';
 import { Locale, locales } from '@/lib/site';
 
 export default function Navbar() {
   const { content, locale, setLocale } = useI18n();
+  const { user } = useAuth();
+  const portalLabel = user ? 'Backoffice' : locale === 'es' ? 'Login' : 'Login';
 
   return (
     <header className="sticky top-0 z-50 border-b border-white/10 bg-background/80 backdrop-blur">
@@ -23,6 +26,9 @@ export default function Navbar() {
           ))}
         </nav>
         <div className="flex items-center gap-3">
+          <Link href={user ? '/backoffice' : '/login'} className="hidden text-sm text-white/70 hover:text-white sm:inline-flex">
+            {portalLabel}
+          </Link>
           <label className="relative inline-flex items-center rounded-full border border-white/15 bg-white/5 px-3 py-2 text-sm text-white/85">
             <span className="mr-2" aria-hidden="true">
               {locales[locale].flag}

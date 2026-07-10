@@ -1,0 +1,21 @@
+---
+import { brand } from '../data/content';
+---
+
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div>
+      <h3>{brand.name}</h3>
+      <p>{brand.tagline}</p>
+    </div>
+    <div>
+      <h4>Contacto</h4>
+      <p>{brand.location}</p>
+      <a href={`mailto:${brand.email}`}>{brand.email}</a>
+    </div>
+    <div>
+      <h4>Acompañamiento</h4>
+      <a href={brand.whatsapp} target="_blank" rel="noreferrer">Escríbenos por WhatsApp</a>
+    </div>
+  </div>
+</footer>
